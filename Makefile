@@ -3,22 +3,21 @@ SRC	= ft_printf.c\
 	ft_putchar_pf.c\
 	ft_putnbr_pf.c\
 	ft_putstr_pf.c\
-	ft_putunbr_base.c
+	ft_putunbr_base.c\
+	ft_strlen.c
 
 OBJ	= $(SRC:.c=.o)
 CC = gcc
 RM = rm 
 RMFLAGS = -f
 CFLAGS = -Wall -Werror -Wextra
-AR = ar
-R = r
 
 NAME = libftprintf.a
 
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-	$(AR) $(R) ${NAME} ${OBJ}
+	$(CC) $(CFLAGS) ${NAME} ${OBJ}
 
 clean:
 	$(RM) $(RMFLAGS) ${OBJ}

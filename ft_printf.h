@@ -1,5 +1,5 @@
-#ifndef PRINTF_H
-# define PRINTF_H
+#ifndef FTPRINTF_H
+# define FTPRINTF_H
 
 #include <limits.h>
 #include <stdio.h>
@@ -15,5 +15,6 @@ void	ft_putchar_pf(char c, int *count);
 void	ft_putnbr_pf(int n, int *count);
 void	ft_putunbr_base(size_t n, char *base, int *count);
 void	ft_putstr_pf(char *s, int *count);
+size_t	ft_strlen(const char *s);
 
 #endif

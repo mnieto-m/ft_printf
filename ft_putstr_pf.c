@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 void	ft_putstr_pf(char *s, int *count)
 {
@@ -24,19 +24,3 @@ void	ft_putstr_pf(char *s, int *count)
 		i++;
 	}
 }
-/* int main() {
-    // Test case 1: Empty string
-    char str1[] = "";
-    ft_putstr_pf(str1, 0); // Expected output: (nothing)
-
-    // Test case 2: String with no special characters
-    char str2[] = "Hello, world!";
-    ft_putstr_pf(str2, 0); // Expected output: Hello, world!
-
-    // Test case 3: String with special characters
-    char str3[] = "Hello\tworld\n";
-    ft_putstr_pf(str3, 0); // Expected output: Hello   world
-
-    return 0;
-}
- */

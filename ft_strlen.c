@@ -12,16 +12,14 @@
 
 #include "ft_printf.h"
 
-void	ft_putunbr_base(size_t n, char *base, int *count)
+size_t	ft_strlen(const char *s)
 {
-	size_t len;
+	int	i;
 
-	len = ft_strlen(base);
-		if (n > (len - 1))
-		{
-			ft_putunbr_base((n / len), base,count);
-			n = n % len;
-		}
-		if (n < len)
-			ft_putchar_pf(base[n], count);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }

@@ -10,29 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-static int ft_checker(va_list args, const char *flag, int *count )
+static void ft_checker(va_list args, const char *flag, int *count )
 {
-	if(flag == 'c')
-		return (ft_putchar_pf(va_arg(args, int), count));
-	else if(flag =='s')/*print string*/
-		return (ft_putstr_pf(va_arg(args, char *), count));
-	else if(flag =='p')/*print void pointer hex*/
-		return (ft_pointer_pf(va_arg(args, void*), count));
-	else if(flag == 'd')/*print decimal*/
-		return (ft_putnbr_pf(va_arg(args, int), count));
-	else if(flag =='i')/* print integer*/
-		return (ft_putnbr_pf(va_arg(args, int), count));
-	else if( flag == 'u')/* print unsigned */
-		return (ft_putunbr_base(va_arg(args, unsigned int), "0123456789" , count));
-	else if(flag =='x')/* print hex */
-		return (ft_putunbr_base(va_arg(args, unsigned int),"0123456789abcdef", count));
-	else if(flag =='X')/* print hex caps */
-		return (ft_putunbr_base(va_arg(args, unsigned int),"0123456789ABCDEF", count));
-	else if(flag = '%')/* print % */
-		return (ft_putchar_pf(*flag, count));
-	return (0);
+	if(*flag == 'c')
+		ft_putchar_pf(va_arg(args, int), count);
+	else if(*flag =='s')/*print string*/
+		ft_putstr_pf(va_arg(args, char *), count);
+	else if(*flag =='p')/*print void pointer hex*/
+		ft_pointer_pf(va_arg(args, void*), count);
+	else if(*flag == 'd')/*print decimal*/
+		ft_putnbr_pf(va_arg(args, int), count);
+	else if(*flag =='i')/* print integer*/
+		ft_putnbr_pf(va_arg(args, int), count);
+	else if(*flag == 'u')/* print unsigned */
+		ft_putunbr_base(va_arg(args, unsigned int), "0123456789" , count);
+	else if(*flag =='x')/* print hex */
+		ft_putunbr_base(va_arg(args, unsigned int),"0123456789abcdef", count);
+	else if(*flag =='X')/* print hex caps */
+		ft_putunbr_base(va_arg(args, unsigned int),"0123456789ABCDEF", count);
+	else if(*flag == '%')/* print % */
+		ft_putchar_pf(*flag, count);
 }
 
 int ft_printf(const char *flag, ...)

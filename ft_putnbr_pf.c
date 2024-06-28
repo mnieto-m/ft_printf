@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 void	ft_putnbr_pf(int n, int *count)
 {
@@ -35,7 +35,6 @@ void	ft_putnbr_pf(int n, int *count)
 		if (n < 10)
 		{
 			ft_putchar_pf(n + 48, count);
-			(*count)++;
 		}
 	}
 }

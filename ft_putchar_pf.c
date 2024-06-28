@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-void	ft_putchar_pf(const char *c, int *count)
+void	ft_putchar_pf(char c, int *count)
 {
 	write(1, &c, 1);
 	(*count)++;
