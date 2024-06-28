@@ -11,13 +11,15 @@ CC = gcc
 RM = rm 
 RMFLAGS = -f
 CFLAGS = -Wall -Werror -Wextra
+AR = ar
+R = r
 
 NAME = libftprintf.a
 
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-	$(CC) $(CFLAGS) ${NAME} ${OBJ}
+	$(AR) $(R) ${NAME} ${OBJ}
 
 clean:
 	$(RM) $(RMFLAGS) ${OBJ}
