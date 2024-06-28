@@ -9,12 +9,12 @@
 #include <stdarg.h>
 
 int ft_printf(char const *flag, ...);
-void	ft_putnbr_pf(int n, int *count);
-void	ft_pointer_pf(void *flag,int *count);
-void	ft_putchar_pf(char c, int *count);
-void	ft_putnbr_pf(int n, int *count);
-void	ft_putunbr_base(size_t n, char *base, int *count);
-void	ft_putstr_pf(char *s, int *count);
-size_t	ft_strlen(const char *s);
+int ft_putnbr_pf(int n);
+int ft_pointer_pf(void *flag);
+int ft_putchar_pf(char c);
+int ft_putnbr_pf(int n);
+int ft_putunbr_base(size_t n, char *base);
+int ft_putstr_pf(char *s);
+size_t ft_strlen(const char *s);
 
 #endif

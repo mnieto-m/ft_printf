@@ -13,13 +13,14 @@ RMFLAGS = -f
 CFLAGS = -Wall -Werror -Wextra
 AR = ar
 R = r
+INCLUDE = ft_printf.h
 
 NAME = libftprintf.a
 
 all: ${NAME}
 
-${NAME}: ${OBJ}
-	$(AR) $(R) ${NAME} ${OBJ}
+${NAME}: ${OBJ} $(INCLUDE)
+	$(AR) $(R) ${NAME} ${OBJ} $(INCLUDE)
 
 clean:
 	$(RM) $(RMFLAGS) ${OBJ}

@@ -6,21 +6,23 @@
 /*   By: mnieto-m <mnieto-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 20:33:18 by mnieto-m          #+#    #+#             */
-/*   Updated: 2024/06/22 16:52:33 by mnieto-m         ###   ########.fr       */
+/*   Updated: 2024/06/28 17:34:25 by mnieto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr_pf(char *s, int *count)
+int	ft_putstr_pf(char *s)
 {
 	int i;
-	i = 0;
+	int count;
 
+	count = 0;
+	i = 0;
 	while(s[i] != '\0')
 	{
-		write(1, &s[i], 1);
-		(*count)++;
+		count += write(1, &s[i], 1);
 		i++;
 	}
+	return(count);
 }
