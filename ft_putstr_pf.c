@@ -6,23 +6,25 @@
 /*   By: mnieto-m <mnieto-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 20:33:18 by mnieto-m          #+#    #+#             */
-/*   Updated: 2024/06/28 17:34:25 by mnieto-m         ###   ########.fr       */
+/*   Updated: 2024/07/02 19:16:33 by mnieto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr_pf(char *s)
+size_t	ft_putstr_pf(char *s)
 {
-	int i;
-	int count;
+	size_t	i;
+	size_t	count;
 
 	count = 0;
 	i = 0;
-	while(s[i] != '\0')
+	if (s == NULL)
+		return (write(1, "(null)", 6));
+	while (s[i])
 	{
-		count += write(1, &s[i], 1);
+		count += (write(1, &s[i], 1));
 		i++;
 	}
-	return(count);
+	return (count);
 }

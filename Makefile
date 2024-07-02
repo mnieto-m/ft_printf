@@ -11,6 +11,7 @@ CC = gcc
 RM = rm 
 RMFLAGS = -f
 CFLAGS = -Wall -Werror -Wextra
+#CFLAGS += -fsanitize=address -g3
 AR = ar
 R = r
 INCLUDE = ft_printf.h

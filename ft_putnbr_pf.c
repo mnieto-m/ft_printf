@@ -6,15 +6,15 @@
 /*   By: mnieto-m <mnieto-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 22:31:08 by mnieto-m          #+#    #+#             */
-/*   Updated: 2024/06/28 18:02:50 by mnieto-m         ###   ########.fr       */
+/*   Updated: 2024/07/02 19:09:55 by mnieto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr_pf(int n)
+size_t	ft_putnbr_pf(int n)
 {
-	int count;
+	size_t	count;
 
 	count = 0;
 	if (n == -2147483648)
@@ -23,16 +23,16 @@ int	ft_putnbr_pf(int n)
 	{
 		if (n < 0)
 		{
-			count = (write(1, "-", 1));
+			count += (write(1, "-", 1));
 			n = n * -1;
 		}
-		else if (n > 9)
+		if (n > 9)
 		{
-			ft_putnbr_pf(n / 10);
+			count += (ft_putnbr_pf(n / 10));
 			n = n % 10;
 		}
-		else
-			count += ft_putchar_pf(n + 48);
+		if (n < 10)
+			count += (ft_putchar_pf(n + 48));
 	}
-	return(count);
+	return (count);
 }
